@@ -1,6 +1,13 @@
 pipeline {
     agent any
     stages {
+        stage('one stage-1') {
+            steps {
+                echo "This is one 1"
+                sh 'whoami'
+                sh 'ls -la'
+            }
+        }
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
